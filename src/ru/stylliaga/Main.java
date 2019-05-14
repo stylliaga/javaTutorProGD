@@ -1,22 +1,24 @@
 package ru.stylliaga;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 public class Main {
 
     public static void main(String[] args) {
-	    int arr[] = {23,6,7};
+	    try {
+			File file = new File("newfile.txt");
 
-    	try{
+			if(!file.exists()){
+			file.createNewFile();}
 
-			//System.out.println(arr[7]);
-	    	//int x = 100 / 0;
-		}catch (ArithmeticException e){
-	    	System.out.println("Ошибка выполнения операции " + e);
-		}catch (Exception e){
-    		System.out.println("Error - " + e);
-		}finally {
-			System.out.println("Finally is working!");
+			PrintWriter pw = new PrintWriter(file);
+			pw.println("Все работает.");
+			pw.println("Helolo World!");
+			pw.close();
+
+		}catch (IOException e){
+	    	System.out.println("Error - " + e);
 		}
     }
 }
