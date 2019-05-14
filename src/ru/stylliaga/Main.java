@@ -14,5 +14,15 @@ public class Main {
 
 		SomeThread test1 = new SomeThread();
 		test1.run();
+
+		Thread t1 = new Thread(new Thread(){
+			@Override
+			public void run(){
+				for(int i = 0; i < 10; i++){
+					System.out.println(i);
+				}
+			}
+		});
+		t1.start();
     }
 }
