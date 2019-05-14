@@ -1,2 +1,3 @@
 Все работает.
 Helolo World!
+New String
